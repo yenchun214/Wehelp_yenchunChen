@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>申請書｜個人簡介與動機</title>
+  <meta name="description" content="個人簡介、申請動機與學習規劃的單頁網站" />
+  <style>
+    :root{
+      --bg:#0f1220;
+      --panel:#161a2b;
+      --ink:#e7e9f5;
+      --muted:#a5acc7;
+      --brand:#6aa6ff;
+      --accent:#9ee8c7;
+      --danger:#ff7b7b;
+      --ring: rgba(106,166,255,.5);
+      --max: 980px;
+      --radius: 16px;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font:16px/1.6 system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,"Noto Sans TC","PingFang TC",sans-serif;
+      color:var(--ink);
+      background: radial-gradient(1200px 700px at 10% -10%, #1b2140 0%, transparent 60%),
+                  radial-gradient(900px 500px at 110% 0%, #17233a 0%, transparent 60%),
+                  var(--bg);
+      letter-spacing:.2px;
+    }
+    a{color:var(--brand);text-decoration:none}
+    a:hover{text-decoration:underline}
+
+    .container{max-width:var(--max);margin:0 auto;padding:28px 20px 80px}
+    header{
+      position:sticky;top:0;z-index:10;
+      backdrop-filter:saturate(140%) blur(8px);
+      background:linear-gradient( to bottom, rgba(15,18,32,.9), rgba(15,18,32,.6) 70%, transparent );
+      border-bottom:1px solid rgba(255,255,255,.06);
+    }
+    .nav{display:flex;align-items:center;gap:18px;max-width:var(--max);margin:0 auto;padding:14px 20px}
+    .brand{display:flex;align-items:center;gap:10px;font-weight:700}
+    .dot{width:10px;height:10px;border-radius:999px;background:linear-gradient(135deg,var(--brand),var(--accent));box-shadow:0 0 0 6px rgba(106,166,255,.15)}
+    .navlinks{margin-left:auto;display:flex;gap:10px;flex-wrap:wrap}
+    .chip{display:inline-flex;align-items:center;gap:8px;padding:8px 12px;border:1px solid rgba(255,255,255,.08);border-radius:999px;background:rgba(255,255,255,.03)}
+    .chip:hover{border-color:rgba(255,255,255,.17)}
+
+    .hero{display:grid;grid-template-columns:1.2fr .8fr;gap:22px;align-items:center;padding:26px 0}
+    .card{background:linear-gradient(180deg,rgba(255,255,255,.04),rgba(255,255,255,.02));border:1px solid rgba(255,255,255,.08);border-radius:var(--radius);box-shadow:0 10px 30px rgba(0,0,0,.25);}
+    .card .body{padding:22px}
+    .title{font-size:38px;line-height:1.2;margin:0 0 8px}
+    .subtitle{color:var(--muted);margin:0}
+
+    .avatar{display:flex;justify-content:center;align-items:center;min-height:100%;}
+    .avatar .circle{width:160px;height:160px;border-radius:999px;border:1px solid rgba(255,255,255,.12);background:
+      conic-gradient(from 0deg,var(--brand),var(--accent),var(--brand));
+      padding:3px;
+    }
+    .avatar .circle .inner{width:100%;height:100%;border-radius:inherit;background:radial-gradient(120px 120px at 30% 20%, #1a2140, #101526);display:flex;align-items:center;justify-content:center;font-weight:800;font-size:32px}
+
+    .grid{display:grid;grid-template-columns:1fr;gap:16px;margin-top:18px}
+    @media (min-width:840px){.grid{grid-template-columns:1fr 1fr}}
+
+    section{scroll-margin-top:90px}
+    .q{display:flex;align-items:flex-start;gap:12px;font-weight:700}
+    .q .hash{color:var(--accent)}
+    .answer{margin:10px 0 0;color:var(--ink)}
+    .muted{color:var(--muted)}
+    .kbd{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:.9em;padding:.2em .5em;border-radius:8px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12)}
+
+    .list{margin:8px 0 0;padding-left:18px}
+    .list li{margin:6px 0}
+
+    .foot{margin-top:34px;display:flex;gap:12px;flex-wrap:wrap}
+    .btn{appearance:none;border:none;border-radius:12px;padding:10px 14px;font-weight:700;cursor:pointer}
+    .btn.primary{background:linear-gradient(135deg,var(--brand),#5b8cff);color:#0c1020;box-shadow:0 10px 30px rgba(106,166,255,.25)}
+    .btn.ghost{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.12);color:var(--ink)}
+    .btn:hover{filter:brightness(1.05)}
+
+    /* Section cards */
+    .sec .head{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:16px 18px;border-bottom:1px dashed rgba(255,255,255,.08)}
+    .sec h2{margin:0;font-size:18px}
+
+    /* Print */
+    @media print{
+      header,.foot,.navlinks{display:none !important}
+      body{background:#fff;color:#222}
+      .card{box-shadow:none;border-color:#ddd}
+      .title{font-size:28px}
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav class="nav">
+      <div class="brand"><span class="dot"></span> 申請書</div>
+      <div class="navlinks">
+        <a class="chip" href="#intro">個人簡介</a>
+        <a class="chip" href="#background">職業背景</a>
+        <a class="chip" href="#plan">學習時間</a>
+        <a class="chip" href="#emotion">情緒經歷</a>
+        <a class="chip" href="#dl-goal">深度學習目標</a>
+        <a class="chip" href="#why-base">為何學基礎模型</a>
+        <a class="chip" href="#since-last">近況努力</a>
+        <a class="chip" href="#others">其他想說</a>
+      </div>
+    </nav>
+  </header>
+
+  <main class="container">
+    <div class="hero">
+      <div class="card">
+        <div class="body">
+          <h1 class="title">陳彥均｜個人簡介與申請動機</h1>
+          <p class="subtitle">以工程視角實作 AI：把資料系統經驗延伸到基礎模型與深度學習</p>
+        </div>
+      </div>
+      <div class="avatar">
+        <div class="circle">
+          <div class="inner">YJ</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="grid">
+      <!-- 個人簡介與申請動機 -->
+      <section class="card sec" id="intro">
+        <div class="head"><h2>個人簡介與申請動機</h2><span class="muted">About & Motivation</span></div>
+        <div class="body">
+          <div class="q"><span class="hash">#</span><div>我是誰、為何申請？</div></div>
+          <p class="answer">
+            我具備軟體與資料工程背景，熟悉 Java 與 Python。近來在專案中負責檔案匯入與資料轉移流程（含 Oracle、JPA、批次處理），也持續練習資料分析與機器學習（NumPy、Pandas、投資組合風險報酬、CAPM、yfinance、GA4 指標分析）。
+            申請本訓練的動機，是希望把既有的系統整合經驗，延伸到 <b>深度學習與基礎模型（Foundation Models）</b> 的落地應用，特別是<b>半結構化文件理解、ETL 自動化</b>與<b>營運決策輔助</b>。
+          </p>
+        </div>
+      </section>
+
+      <!-- 職業背景 / 科系 -->
+      <section class="card sec" id="background">
+        <div class="head"><h2>目前的職業背景；若剛畢業，畢業科系？</h2><span class="muted">Background</span></div>
+        <div class="body">
+          <p class="answer">
+            目前投入企業內部系統整合與資料匯入平台維運／開發：
+          </p>
+          <ul class="list">
+            <li><b>Java 專案</b>：檔案監控與搬移（File Watcher）、MIS Import 與跨區資料表匯入（*_KHH、TW 表），比對完成旗標、錯誤復原流程。</li>
+            <li><b>資料庫</b>：Oracle（批次寫入、交易控管、效能調校）、SQL 腳本與 EntityManager 原生查詢。</li>
+            <li><b>Python / ML 練習</b>：資料清理、特徵工程、K-Fold/LOOCV、時間序列（滾動波動率）、CAPM 回歸與視覺化。</li>
+          </ul>
+          <p class="muted">（如為新鮮人，請於此處填上畢業系所與修課／專題重點。）</p>
+        </div>
+      </section>
+
+      <!-- 學習時間安排 -->
+      <section class="card sec" id="plan">
+        <div class="head"><h2>若參與訓練，如何安排學習時間？</h2><span class="muted">Study Plan</span></div>
+        <div class="body">
+          <ul class="list">
+            <li><b>平日</b>：下班後 2–3 小時（模型閱讀 1h、實作 1–2h）。</li>
+            <li><b>週末</b>：各 4–6 小時（專題衝刺、Error Log 追蹤、回顧筆記）。</li>
+            <li><b>節奏</b>：<span class="kbd">Pomodoro 50/10</span>、每日最小可交付（MVP）與週目標回顧。</li>
+            <li><b>里程碑</b>：
+              <ul class="list">
+                <li>W1–W2：資料與任務定義、標註流程與評估指標（F1、AUROC、Latency）。</li>
+                <li>W3–W4：基線到改良（傳統 ML → 輕量 DL → 指令微調）。</li>
+                <li>W5+：錯誤分析、可觀測性（Logging/Tracing）、部署與 A/B 測試。</li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- 負面情緒經歷 -->
+      <section class="card sec" id="emotion">
+        <div class="head"><h2>描述一件產生明顯負面情緒的經歷，如何處理？</h2><span class="muted">Emotion & Coping</span></div>
+        <div class="body">
+          <p class="answer">
+            曾在批次匯入上線當天遇到異常（插入成功後卻拋出錯誤訊息）。第一時間情緒是焦躁與自責。我先進行<b>五分鐘停損</b>（深呼吸、確認事實），將環境切回安全態、暫停新任務，接著以 <span class="kbd">RCA（Root Cause Analysis）</span> 步驟排查：
+          </p>
+          <ul class="list">
+            <li>重現情境：以最小輸入重現錯誤。</li>
+            <li>觀測數據：檢查交易、例外堆疊、資料約束。</li>
+            <li>快速緩解：加上輸入驗證＆重試機制，避免壞資料擴散。</li>
+            <li>事後筆記：撰寫 Postmortem，將檢核與告警納入 CI/CD。</li>
+          </ul>
+          <p class="answer">透過流程化處理，把情緒轉為行動，並在回顧會議中提出可以被團隊沿用的守則。</p>
+        </div>
+      </section>
+
+      <!-- 最想用 DL 解決的問題 -->
+      <section class="card sec" id="dl-goal">
+        <div class="head"><h2>最想使用自己開發的深度學習模型解決什麼問題？</h2><span class="muted">DL Problem</span></div>
+        <div class="body">
+          <p class="answer">
+            <b>半結構化文件抽取與自動對帳</b>。許多企業流程仍仰賴 TXT/CSV/Excel/掃描 PDF 與旗標檔（.flg）溝通。期望建立一個管線：
+          </p>
+          <ul class="list">
+            <li>OCR／版面理解（Document Understanding）抽取欄位與表格。</li>
+            <li>以輕量語言模型做資料對齊與錯誤更正（例如規則 + LLM 驗證）。</li>
+            <li>產生可追蹤的資料譜（Data Lineage）與信心分數，接上 MIS 匯入。</li>
+          </ul>
+          <p class="answer">此題貼近我的工作場域，能直接創造時效與品質的雙重效益。</p>
+        </div>
+      </section>
+
+      <!-- 為何學基礎模型實作 -->
+      <section class="card sec" id="why-base">
+        <div class="head"><h2>若無法達到 OpenAI 程度，為何要學習基礎模型的實作？</h2><span class="muted">Why Foundation Models</span></div>
+        <div class="body">
+          <ul class="list">
+            <li><b>心智模型</b>：理解架構與訓練流程，才能做出正確的設計取捨。</li>
+            <li><b>效能與成本</b>：會算參數量、記憶體、吞吐與延遲，才談得上優化。</li>
+            <li><b>安全與可靠</b>：資料治理、評測與防護（越獄、幻覺、偏誤）需要底層理解。</li>
+            <li><b>落地能力</b>：能針對任務做蒸餾、剪枝或檢索增強，讓模型可用、好用。</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- 自上次申請以來的努力 -->
+      <section class="card sec" id="since-last">
+        <div class="head"><h2>從上次提出申請至今，多做了哪些努力？</h2><span class="muted">Progress Since Last</span></div>
+        <div class="body">
+          <p class="answer"><b>第一次申請</b>（無此項）。若有再次申請，會在此整理量化成果，例如：</p>
+          <ul class="list">
+            <li>完成 <span class="kbd">Document ETL</span> 原型：抽取 F1 提升 12%，處理時間 -35%。</li>
+            <li>閱讀／實作：Attention、Transformer、指令微調與評測工具鏈。</li>
+            <li>發表技術文章與開源小專案，包含資料清理與評測範本。</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- 其他想說的事 -->
+      <section class="card sec" id="others">
+        <div class="head"><h2>其他想要對你們說的事情</h2><span class="muted">Anything Else</span></div>
+        <div class="body">
+          <p class="answer">
+            我重視可複製的工程流程與清晰溝通，願意在團隊中擔任「把複雜變簡單」的角色。期待在訓練中用實證數據說話，對結果負責、對學習快迭代。
+          </p>
+        </div>
+      </section>
+    </div>
+
+    <div class="foot">
+      <button class="btn primary" onclick="window.print()">列印／另存 PDF</button>
+      <a class="btn ghost" href="#intro">回到頂部</a>
+      <span class="muted">可直接編輯此檔案的文字，輸出為履歷式申請頁。</span>
+    </div>
+  </main>
+</body>
+</html>
