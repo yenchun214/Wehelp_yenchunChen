@@ -46,13 +46,33 @@
     .chip{display:inline-flex;align-items:center;gap:8px;padding:8px 12px;border:1px solid rgba(255,255,255,.08);border-radius:999px;background:rgba(255,255,255,.03)}
     .chip:hover{border-color:rgba(255,255,255,.17)}
 
-    .hero{display:grid;grid-template-columns:1.2fr .8fr;gap:22px;align-items:center;padding:26px 0}
+    /* Hero 區塊 */
+    .hero{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:40px;
+      padding:40px 0;
+    }
+    .hero .card{flex:1;}
+    .avatar{
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      flex-shrink:0;
+    }
+    .avatar img{
+      width:180px;
+      height:180px;
+      border-radius:50%;
+      border:3px solid var(--brand);
+      object-fit:cover;
+    }
+
     .card{background:linear-gradient(180deg,rgba(255,255,255,.04),rgba(255,255,255,.02));border:1px solid rgba(255,255,255,.08);border-radius:var(--radius);box-shadow:0 10px 30px rgba(0,0,0,.25);}
     .card .body{padding:22px}
     .title{font-size:38px;line-height:1.2;margin:0 0 8px}
     .subtitle{color:var(--muted);margin:0}
-
-    .avatar{display:flex;justify-content:center;align-items:center;min-height:100%;}
 
     .grid{
       display:grid;
@@ -106,6 +126,7 @@
 
   <main class="container">
     <div class="hero">
+      <!-- 左側文字 -->
       <div class="card">
         <div class="body">
           <h1 class="title">陳彥均｜個人簡介與申請動機</h1>
@@ -114,15 +135,21 @@
           </p>
         </div>
       </div>
-    <div class="grid">
 
+      <!-- 右側照片 -->
+      <div class="avatar">
+        <img src="your_photo.jpg" alt="陳彥均照片">
+      </div>
+    </div>
+
+    <div class="grid">
       <!-- 個人簡介與申請動機 -->
       <section class="card sec" id="intro">
         <div class="head"><h2>個人簡介與申請動機</h2><span class="muted">About & Motivation</span></div>
         <div class="body">
           <div class="q"><span class="hash">#</span><div>我是誰、為何申請？</div></div>
           <p class="answer">
-            我具備軟體與資料工程背景，從物理治療師轉職後，透過 Tibame Java 養成班與實務專案累積開發經驗。目前於國泰金控私銀科擔任全端工程師，熟悉 Java 。近半年積極進修 <b>機器學習、Python、初步深度學習、GA4 數據分析及 Oracle PL/SQL</b>，希望將資料分析能力延伸至 <b>深度學習與基礎模型應用</b>，特別是 <b>半結構化文件理解、ETL 自動化</b> 與 <b>營運決策輔助</b>。
+            我具備軟體與資料工程背景，從物理治療師轉職後，透過 Tibame Java 養成班與實務專案逐步累積開發經驗，目前於國泰金控私銀科擔任全端工程師，熟悉 Java 與 Python。近半年我積極進修 <b>機器學習、Python、初步的深度學習、GA4 數據分析以及 Oracle PL/SQL</b>，希望結合既有的系統開發與金融產業經驗，將專案流程延伸到 <b>深度學習與基礎模型（Foundation Models）</b> 的落地應用，特別是 <b>半結構化文件理解、ETL 自動化</b> 與 <b>營運決策輔助</b>。
           </p>
         </div>
       </section>
@@ -135,11 +162,12 @@
             目前投入企業內部系統整合與資料匯入平台維運／開發：
           </p>
           <ul class="list">
-            <li><b>全端開發</b>：國泰金控私銀科，參與私銀系統開發與維護，並支援金融商品與財富管理系統的優化。</li>
+            <li><b>全端開發</b>：國泰金控私銀科，參與私銀系統的開發與維護，並支援金融商品與財富管理系統的優化。</li>
             <li><b>資料庫</b>：Oracle（批次寫入、交易控管、效能調校）、SQL 腳本與 EntityManager 原生查詢。</li>
-            <li><b>Python / ML 練習</b>：資料清理、特徵工程、K-Fold/LOOCV、時間序列分析、CAPM 回歸與視覺化。</li>
-            <li><b>進修課程</b>：近半年完成 <b>機器學習、Python、初步深度學習、GA4、Oracle PL/SQL</b>，強化數據分析與資料庫整合能力。</li>
+            <li><b>Python / ML 練習</b>：資料清理、特徵工程、K-Fold/LOOCV、時間序列（滾動波動率）、CAPM 回歸與視覺化。</li>
+            <li><b>進修課程</b>：近半年完成 <b>機器學習、Python、初步深度學習、GA4（Google Analytics 4）、Oracle PL/SQL</b>，強化數據分析與資料庫整合能力。</li>
           </ul>
+          <p class="muted">（如為新鮮人，請於此處填上畢業系所與修課／專題重點。）</p>
         </div>
       </section>
 
@@ -151,7 +179,7 @@
             <li><b>平日</b>：下班後 2–3 小時（模型閱讀 1h、實作 1–2h）。</li>
             <li><b>週末</b>：各 4–6 小時（專題衝刺、Error Log 追蹤、回顧筆記）。</li>
             <li><b>節奏</b>：<span class="kbd">Pomodoro 50/10</span>、每日最小可交付（MVP）與週目標回顧。</li>
-            <li><b>基礎</b>：近半年完成機器學習、Python、GA4、初步深度學習與 Oracle PL/SQL 課程，養成持續學習與專題練習的習慣。</li>
+            <li><b>基礎</b>：近半年我已完成機器學習、Python、GA4、初步深度學習與 Oracle PL/SQL 課程，養成持續學習與專題練習的習慣。</li>
             <li><b>里程碑</b>：
               <ul class="list">
                 <li>W1–W2：資料與任務定義、標註流程與評估指標（F1、AUROC、Latency）。</li>
@@ -168,31 +196,31 @@
         <div class="head"><h2>描述一件產生明顯負面情緒的經歷，如何處理？</h2><span class="muted">Emotion & Coping</span></div>
         <div class="body">
           <p class="answer">
-            曾在批次匯入上線當天遇到異常（插入成功後卻拋出錯誤訊息），第一時間情緒是焦躁與自責。我先進行 <b>五分鐘停損</b>（深呼吸、確認事實），將環境切回安全態、暫停新任務，再以 <span class="kbd">RCA（Root Cause Analysis）</span> 步驟排查：
+            曾在批次匯入上線當天遇到異常（插入成功後卻拋出錯誤訊息）。第一時間情緒是焦躁與自責。我先進行<b>五分鐘停損</b>（深呼吸、確認事實），將環境切回安全態、暫停新任務，接著以 <span class="kbd">RCA（Root Cause Analysis）</span> 步驟排查：
           </p>
           <ul class="list">
             <li>重現情境：以最小輸入重現錯誤。</li>
             <li>觀測數據：檢查交易、例外堆疊、資料約束。</li>
-            <li>快速緩解：加上輸入驗證與重試機制，避免壞資料擴散。</li>
+            <li>快速緩解：加上輸入驗證＆重試機制，避免壞資料擴散。</li>
             <li>事後筆記：撰寫 Postmortem，將檢核與告警納入 CI/CD。</li>
           </ul>
-          <p class="answer">透過流程化處理，把情緒轉為行動，並在回顧會議中提出可被團隊沿用的守則，也促使我重視 <b>數據品質、監控與自動化測試</b>，進而進修 ML 與 GA4 課程。</p>
+          <p class="answer">透過流程化處理，把情緒轉為行動，並在回顧會議中提出可以被團隊沿用的守則。這種經驗也促使我更重視 <b>數據品質、監控與自動化測試</b>，因此進修了 ML 與 GA4 課程。</p>
         </div>
       </section>
 
-      <!-- 深度學習目標 -->
+      <!-- 最想用 DL 解決的問題 -->
       <section class="card sec" id="dl-goal">
         <div class="head"><h2>最想使用自己開發的深度學習模型解決什麼問題？</h2><span class="muted">DL Problem</span></div>
         <div class="body">
           <p class="answer">
-            <b>半結構化文件抽取與自動對帳</b>。在金融業務流程中，TXT/CSV/Excel/掃描 PDF 與旗標檔（.flg）常被使用，錯誤會直接影響交易或匯入結果。期望建立一個完整管線：
+            <b>半結構化文件抽取與自動對帳</b>。在金融業務流程中，常見 TXT/CSV/Excel/掃描 PDF 與旗標檔（.flg）溝通，錯誤會直接影響交易或匯入結果。期望建立一個管線：
           </p>
           <ul class="list">
             <li>OCR／版面理解（Document Understanding）抽取欄位與表格。</li>
             <li>以輕量語言模型做資料對齊與錯誤更正（規則 + LLM 驗證）。</li>
             <li>產生可追蹤的資料譜（Data Lineage）與信心分數，接上 MIS 匯入與決策流程。</li>
           </ul>
-          <p class="answer">此題貼近工作場域，也呼應我近半年在 <b>機器學習、GA4、初步深度學習與 Oracle PL/SQL</b> 的學習方向。</p>
+          <p class="answer">此題貼近我的工作場域，也呼應我近半年在 <b>機器學習、GA4、初步深度學習課程與 Oracle PL/SQL</b> 的學習方向。</p>
         </div>
       </section>
 
@@ -201,7 +229,7 @@
         <div class="head"><h2>若無法達到 OpenAI 程度，為何要學習基礎模型的實作？</h2><span class="muted">Why Foundation Models</span></div>
         <div class="body">
           <ul class="list">
-            <li><b>心智模型</b>：理解架構與訓練流程，才能做出正確設計取捨。</li>
+            <li><b>心智模型</b>：理解架構與訓練流程，才能做出正確的設計取捨。</li>
             <li><b>效能與成本</b>：會算參數量、記憶體、吞吐與延遲，才談得上優化。</li>
             <li><b>安全與可靠</b>：資料治理、評測與防護（越獄、幻覺、偏誤）需要底層理解。</li>
             <li><b>落地能力</b>：能針對任務做蒸餾、剪枝或檢索增強，讓模型可用、好用。</li>
@@ -214,7 +242,7 @@
         <div class="head"><h2>其他想要對你們說的事情</h2><span class="muted">Anything Else</span></div>
         <div class="body">
           <p class="answer">
-            我重視可複製的工程流程與清晰溝通，願意在團隊中擔任「把複雜變簡單」的角色。透過課程累積基礎，希望在訓練中把理論與產業需求結合，用實證數據說話，對結果負責、快速迭代學習。
+            我重視可複製的工程流程與清晰溝通，願意在團隊中擔任「把複雜變簡單」的角色。這半年透過課程累積基礎 ML 與深度學習概念，也實作了 Python 資料分析、初步深度學習模型與 GA4 報表分析。期望在貴計畫中，能將這些能力實際落地，並進一步學習與交流。
           </p>
         </div>
       </section>
