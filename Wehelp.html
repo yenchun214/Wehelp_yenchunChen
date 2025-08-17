@@ -159,15 +159,14 @@
         <div class="head"><h2>目前的職業背景；若剛畢業，畢業科系？</h2><span class="muted">Background</span></div>
         <div class="body">
           <p class="answer">
-            目前投入企業內部系統整合與資料匯入平台維運／開發：
+            目前投入銀行系統平台維運／開發：
           </p>
           <ul class="list">
-            <li><b>全端開發</b>：國泰金控私銀科，參與私銀系統的開發與維護，並支援金融商品與財富管理系統的優化。</li>
+            <li><b>全端開發</b>：銀行參與系統的開發與維護，並支援網銀系統的優化。</li>
             <li><b>資料庫</b>：Oracle（批次寫入、交易控管、效能調校）、SQL 腳本與 EntityManager 原生查詢。</li>
             <li><b>Python / ML 練習</b>：資料清理、特徵工程、K-Fold/LOOCV、時間序列（滾動波動率）、CAPM 回歸與視覺化。</li>
             <li><b>進修課程</b>：近半年完成 <b>機器學習、Python、初步深度學習、GA4（Google Analytics 4）、Oracle PL/SQL</b>，強化數據分析與資料庫整合能力。</li>
           </ul>
-          <p class="muted">（如為新鮮人，請於此處填上畢業系所與修課／專題重點。）</p>
         </div>
       </section>
 
@@ -176,37 +175,35 @@
         <div class="head"><h2>若參與訓練，如何安排學習時間？</h2><span class="muted">Study Plan</span></div>
         <div class="body">
           <ul class="list">
-            <li><b>平日</b>：下班後 2–3 小時（模型閱讀 1h、實作 1–2h）。</li>
-            <li><b>週末</b>：各 4–6 小時（專題衝刺、Error Log 追蹤、回顧筆記）。</li>
-            <li><b>節奏</b>：<span class="kbd">Pomodoro 50/10</span>、每日最小可交付（MVP）與週目標回顧。</li>
-            <li><b>基礎</b>：近半年我已完成機器學習、Python、GA4、初步深度學習與 Oracle PL/SQL 課程，養成持續學習與專題練習的習慣。</li>
-            <li><b>里程碑</b>：
-              <ul class="list">
-                <li>W1–W2：資料與任務定義、標註流程與評估指標（F1、AUROC、Latency）。</li>
-                <li>W3–W4：基線到改良（傳統 ML → 輕量 DL → 指令微調）。</li>
-                <li>W5+：錯誤分析、可觀測性（Logging/Tracing）、部署與 A/B 測試。</li>
-              </ul>
-            </li>
+            <li><b>平日</b>：下班時間（19:00–21:30）：完成當週任務、閱讀參考資料、撰寫每日進度報告。</li>
+            <li><b>每週一晚上 21:00</b>：參加線上會議，理解當週任務重點與關鍵技術。</li>
+            <li><b>週末</b>：各 4–6 小時（加強不熟悉內容、將進度未跟上部分補上、整理筆記、與社群討論問題）。</li>
+            <li><b>課程結束前一週</b>：準備規定的相關測驗複習(線性代數紙筆考試、參與職場經驗分享。</li>
           </ul>
         </div>
       </section>
-
       <!-- 負面情緒經歷 -->
-      <section class="card sec" id="emotion">
-        <div class="head"><h2>描述一件產生明顯負面情緒的經歷，如何處理？</h2><span class="muted">Emotion & Coping</span></div>
-        <div class="body">
-          <p class="answer">
-            曾在批次匯入上線當天遇到異常（插入成功後卻拋出錯誤訊息）。第一時間情緒是焦躁與自責。我先進行<b>五分鐘停損</b>（深呼吸、確認事實），將環境切回安全態、暫停新任務，接著以 <span class="kbd">RCA（Root Cause Analysis）</span> 步驟排查：
-          </p>
-          <ul class="list">
-            <li>重現情境：以最小輸入重現錯誤。</li>
-            <li>觀測數據：檢查交易、例外堆疊、資料約束。</li>
-            <li>快速緩解：加上輸入驗證＆重試機制，避免壞資料擴散。</li>
-            <li>事後筆記：撰寫 Postmortem，將檢核與告警納入 CI/CD。</li>
-          </ul>
-          <p class="answer">透過流程化處理，把情緒轉為行動，並在回顧會議中提出可以被團隊沿用的守則。這種經驗也促使我更重視 <b>數據品質、監控與自動化測試</b>，因此進修了 ML 與 GA4 課程。</p>
-        </div>
-      </section>
+   <section class="card sec" id="emotion">
+   <div class="head">
+    <h2>描述一件產生明顯負面情緒的經歷，如何處理？</h2>
+    <span class="muted">Emotion & Coping</span>
+   </div>
+   <div class="body">
+    <p class="answer">
+      剛轉職成為工程師時，面對工作上許多在訓練班沒有學到的新技術與流程，常常感到挫折與不安。每當遇到問題，我必須靠自我學習、查閱文件與資源，並反覆測試程式碼以確保上線順利。
+      曾有一次因測試遺漏某種情境，導致程式上線後出現異常。當下我先冷靜分析，並依循流程找到問題根因，提出短期替代方案，確保系統正常運行，接著修復程式並重新完整測試後再上線。
+    </p>
+    <ul class="list">
+      <li>找到問題根因：立即確認錯誤發生原因，避免盲目操作。</li>
+      <li>替代解決方案：設計短期措施，讓系統維持穩定運作。</li>
+      <li>修復程式並謹慎測試：完成程式修復後進行完整 End-to-End 測試。</li>
+      <li>記取教訓：將每次錯誤詳細紀錄，建立團隊共享守則，避免重複發生。</li>
+    </ul>
+    <p class="answer">
+      透過流程化處理，我將情緒轉化為行動，也在回顧會議中提出可被團隊沿用的守則。這段經歷讓我更重視 <b>數據品質、監控與自動化測試</b>，並促使我進修 ML 與 GA4 課程，持續提升專業能力與問題解決的自信心。
+    </p>
+  </div>
+</section>
 
       <!-- 最想用 DL 解決的問題 -->
       <section class="card sec" id="dl-goal">
